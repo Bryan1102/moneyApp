@@ -7,6 +7,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,6 +19,8 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.TreeTableView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -29,6 +32,10 @@ public class PrimaryController implements Initializable
     @FXML FlowPane paneTitle, paneBottom;
     @FXML HBox paneNav, paneMain;
     @FXML VBox pageInput;
+    
+        /* Tables */
+    @FXML TreeTableView treeTableTypes;
+    @FXML TreeTableColumn treeTableTypeColumn, treeTableSubTypeColumn;
     
     /* FINANCIAL RECORD PAGE */
         /* Controls */
@@ -49,7 +56,9 @@ public class PrimaryController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         sm = new StatusMessage(txtStatus);
+        
         initInputPage();
+        initInputTypePage();
     }
     public void initInputPage()
     {
@@ -72,6 +81,12 @@ public class PrimaryController implements Initializable
     
     public void initInputTypePage()
     {
+        typeList = FXCollections.observableArrayList();
+        
+        FinancialRecordTypes frt = new FinancialRecordTypes(1, "maint1", 2, "subt1");
+        typeList.add(frt);
+        
+        
         
     }
     
