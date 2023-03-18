@@ -1,0 +1,51 @@
+
+/* 
+    Created on : 2023. márc. 4., 10:38:30
+    Author     : Anthorra
+*/
+
+.paneTitle
+{
+    -fx-background-color: #55a630;
+}
+
+
+.paneNav
+{
+    -fx-background-color: #bfd200;
+}
+.paneNav Button
+{
+    /*-fx-background-color: #bfd200;*/
+    -fx-background-color:transparent ;
+    
+    -fx-text-fill: black;
+    -fx-font-size: 16;
+    
+    /*-fx-padding: 6 12 6 12 ;*/
+    
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-radius: 25 25 0 0;
+    -fx-border-color: #55a630;
+    
+    -fx-background-radius: 25 25 0 0;
+    /*-fx-border-color:green;*/
+    -fx-cursor: hand;
+}
+
+.paneMain
+{
+    -fx-background-color: #ffffbf;
+}
+
+
+
+.paneBottom
+{
+    -fx-background-color: #007f5f;
+}
+.paneBottom Label
+{
+    -fx-alignment: center ;
+}
