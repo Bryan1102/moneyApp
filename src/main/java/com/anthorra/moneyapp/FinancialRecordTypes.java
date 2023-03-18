@@ -7,20 +7,58 @@ package com.anthorra.moneyapp;
  */
 public class FinancialRecordTypes
 {
-    public int id;
-    public String desc;
-    public String created;
-    public boolean isDeleted;
+    MainType mainType;
+    SubType subType;
 
-    public FinancialRecordTypes(int id, String desc, String created, boolean isDeleted)
+    public FinancialRecordTypes(MainType mainType, SubType subType)
     {
-        this.id = id;
-        this.desc = desc;
-        this.created = created;
-        this.isDeleted = isDeleted;
+        this.mainType = mainType;
+        this.subType = subType;
     }
 
+    
+    
+    private class MainType
+    {
+        public int id;
+        public String desc;
+        public boolean isDeleted;
+        
+        public MainType()
+        {
+            this.id = id;
+            this.desc = desc;
+            this.isDeleted = isDeleted;
+        }
 
+        /* GETTER */
+        public String getMainTypeDesc()        {            return desc;        }
+        
+        
+    }
+        
+    public class SubType
+    {
+        public int id;
+        public int parentId;
+        public String desc;
+        public boolean isDeleted;
+        
+        public SubType()
+        {
+            this.id = id;
+            this.parentId = parentId;
+            this.desc = desc;
+            this.isDeleted = isDeleted;
+        }    
+
+        /* GETTER */
+        public String getSubTypeDesc()        {            return desc;        }
+        
+        
+    }
+
+    
     
     
     

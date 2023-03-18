@@ -7,6 +7,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -41,8 +42,7 @@ public class PrimaryController implements Initializable
     
         /* Others */
     StatusMessage sm;
-    ArrayList<FinancialRecordTypes> listTypes;
-    ArrayList<FinancialRecordTypes> listSubTypes;
+    ObservableList<FinancialRecordTypes> typeList;
     
     /* INITIALIZE */
     @Override
@@ -62,10 +62,6 @@ public class PrimaryController implements Initializable
         cbSubType.getItems().addAll(types);
         
         
-        
-        
-        
-        
         ToggleGroup rbtnToggleGroup = new ToggleGroup();
         rbtnExpense.setToggleGroup(rbtnToggleGroup);
         rbtnIncome.setToggleGroup(rbtnToggleGroup);
@@ -74,7 +70,10 @@ public class PrimaryController implements Initializable
         inpDatePicker.setValue(LocalDate.now());
     }
     
-    
+    public void initInputTypePage()
+    {
+        
+    }
     
     
     

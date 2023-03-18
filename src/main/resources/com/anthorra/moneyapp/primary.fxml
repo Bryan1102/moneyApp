@@ -8,10 +8,10 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -79,12 +79,12 @@
                               </VBox>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <TableView prefHeight="411.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <TreeTableView fx:id="treeTableTypes" prefHeight="200.0" prefWidth="200.0">
                                       <columns>
-                                        <TableColumn prefWidth="75.0" text="C1" />
-                                        <TableColumn prefWidth="75.0" text="C2" />
+                                        <TreeTableColumn fx:id="treeTableTypeColumn" prefWidth="75.0" text="C1" />
+                                        <TreeTableColumn fx:id="treeTableSubTypeColumn" prefWidth="75.0" text="C2" />
                                       </columns>
-                                    </TableView>
+                                    </TreeTableView>
                                  </children>
                               </AnchorPane>
                            </children>
