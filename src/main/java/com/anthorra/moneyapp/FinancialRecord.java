@@ -17,7 +17,8 @@ public class FinancialRecord
 
     public FinancialRecord(double amount, boolean isExpense, int type, int subtype, String comment, String realizedDate)
     {
-        this.amount = amount;
+        this.amount = amount<0?0:((double)(Math.round(amount * 1000.00)/1000.00));
+        //setAmount(amount<0?0:((double)(Math.round(amount * 100.00)/100.00)));
         this.isExpense = isExpense;
         this.type = type;
         this.subtype = subtype;

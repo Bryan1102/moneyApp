@@ -87,5 +87,19 @@ public class FinancialRecordTest
         
     }
     
+    @Test
+    public void testExtremeCase()
+    {
+        FinancialRecord fr3 = new FinancialRecord(-5500, true, 1, 2, "Kenyeret vettem", "2023-03-18");
+        assertEquals(0, fr3.getAmount(),"testExtremeCase-negativeAmount-fr3");
+        
+        /*KÉRDÉS: ha van Constructor és Setter is, akkor érdemes-e a constructorban is a settert használni? vagy lehet?*/
+        /* ha használom akkor overridable method? */
+        /* SETTER teszteket külön a szélsőségesekre */
+        
+        //fr3.setAmount(1521.6565);
+        fr3 = new FinancialRecord(1521.6562, true, 1, 2, "Kenyeret vettem", "2023-03-18");
+        assertEquals(1521.656, fr3.getAmount(),"testExtremeCase-roundAmount-fr3");
+    }
     
 }
