@@ -33,6 +33,14 @@ public class FinancialRecord
     public int getSubtype()    {        return subtype;    }
     public String getComment()    {        return comment;    }
     public String getRealizedDate()    {        return realizedDate;    }
+
+    /* SETTER SECTION */
+    public void setAmount(double amount)    {        this.amount = amount;    }
+    public void setIsExpense(boolean isExpense)    {        this.isExpense = isExpense;    }
+    public void setType(int type)    {        this.type = type;    }
+    public void setSubtype(int subtype)    {        this.subtype = subtype;    }
+    public void setRealizedDate(String realizedDate)    {        this.realizedDate = realizedDate;    }
+    public void setComment(String comment)    {        this.comment = comment;    }
     
     
     
