@@ -19,8 +19,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
+import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -34,8 +36,8 @@ public class PrimaryController implements Initializable
     @FXML VBox pageInput;
     
         /* Tables */
-    @FXML TreeTableView treeTableTypes;
-    @FXML TreeTableColumn treeTableTypeColumn, treeTableSubTypeColumn;
+    @FXML TreeTableView<FinancialRecordTypes> treeTableTypes;
+    @FXML TreeTableColumn<FinancialRecordTypes, String> treeTableTypeColumn, treeTableSubTypeColumn;
     
     /* FINANCIAL RECORD PAGE */
         /* Controls */
@@ -81,13 +83,30 @@ public class PrimaryController implements Initializable
     
     public void initInputTypePage()
     {
+        /*
         typeList = FXCollections.observableArrayList();
         
         FinancialRecordTypes frt = new FinancialRecordTypes(1, "maint1", 2, "subt1");
         typeList.add(frt);
+        frt = new FinancialRecordTypes(1, "maint1", 3, "subt2");
+        typeList.add(frt);
+        frt = new FinancialRecordTypes(2, "maint2", 4, "subt4");
+        typeList.add(frt);
+        frt = new FinancialRecordTypes(2, "maint2", 5, "subt5");
+        typeList.add(frt);
         
+        TreeItem t1 = new TreeItem(frt);
         
+        treeTableTypes = new TreeTableView<FinancialRecordTypes>();
+        treeTableTypeColumn = new TreeTableColumn<>("FŐkat");
+        treeTableSubTypeColumn = new TreeTableColumn<>("Subcat");
         
+        treeTableTypeColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("mainDesc"));
+        treeTableSubTypeColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("subDesc"));
+        
+        //obs list not compatible with tree item... to be continued
+        //treeTableTypes.setRoot(typeList);
+        */
     }
     
     
