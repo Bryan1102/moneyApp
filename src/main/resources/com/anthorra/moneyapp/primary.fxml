@@ -81,10 +81,10 @@
                                  <children>
                                     <TreeTableView fx:id="treeTableTypes" prefHeight="411.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
-                                          <TreeTableColumn fx:id="treeTableTypeId" prefWidth="75.0" text="Column X" />
-                                        <TreeTableColumn fx:id="treeTableTypeColumn" prefWidth="75.0" text="C1" />
-                                          <TreeTableColumn fx:id="treeTableTypeSubTypeId" prefWidth="75.0" text="Column X" />
-                                        <TreeTableColumn fx:id="treeTableSubTypeColumn" prefWidth="75.0" text="C2" />
+                                          <TreeTableColumn fx:id="treeTableTypeId" maxWidth="150.0" minWidth="20.0" prefWidth="120.0" text="Kat. Azon." />
+                                        <TreeTableColumn fx:id="treeTableTypeColumn" maxWidth="150.0" minWidth="20.0" prefWidth="120.0" text="Kategória" />
+                                          <TreeTableColumn fx:id="treeTableTypeSubTypeId" maxWidth="150.0" minWidth="20.0" prefWidth="120.0" text="Alkat. Azon." />
+                                        <TreeTableColumn fx:id="treeTableSubTypeColumn" maxWidth="150.0" minWidth="20.0" prefWidth="120.0" text="Alkategória" />
                                       </columns>
                                     </TreeTableView>
                                  </children>

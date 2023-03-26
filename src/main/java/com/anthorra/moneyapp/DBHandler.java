@@ -94,12 +94,37 @@ public class DBHandler
     public static ArrayList<FinancialRecordTypes> queryTypeList()
     {
         ArrayList<FinancialRecordTypes> typeList = new ArrayList<>();
-        /*ITT MAJD FIGYELNI KELL HOGY SORRENDBEN LEGYENEK A KATEGORIAK!!!!*/
+        String sqlQuery = "Select f.ID, f.TYPE_DESC, fs.ID, fs.PARENT_ID, fs.TYPE_DESC FROM fintypes f  LEFT JOIN finsubtypes fs ON f.ID = fs.PARENT_ID\n" +
+                            "WHERE f.IS_DELETED is null  AND fs.IS_DELETED is null\n" +
+                            "ORDER BY f.ID, fs.ID";
+        Connection con;
         
-        return null;
+        try
+        {
+            con = retrieveConn();
+            Statement stmt = con.createStatement();
+            
+            ResultSet rs = stmt.executeQuery(sqlQuery);
+            while(rs.next())
+            {
+                FinancialRecordTypes frt = new FinancialRecordTypes(rs.getInt(1), 
+                                                                    rs.getString(2), 
+                                                                    rs.getInt(3), 
+                                                                    /*rs.getInt(4),*/
+                                                                    rs.getString(5));
+                typeList.add(frt);
+            }
+            
+        } 
+        catch (SQLException ex)
+        {
+            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return typeList;
     }
     
-    /* CONNECTION SUB ROUTINES */
+    /* CONNECTION SUB ROUTINE */
     private static Connection retrieveConn()
     {
         String driverClassName = "com.mysql.cj.jdbc.Driver";

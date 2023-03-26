@@ -1,5 +1,6 @@
 package com.anthorra.moneyapp;
 
+import static com.anthorra.moneyapp.DBHandler.queryTypeList;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -61,6 +62,7 @@ public class PrimaryController implements Initializable
         
         initInputPage();
         initInputTypePage();
+        
     }
     public void initInputPage()
     {
@@ -83,15 +85,15 @@ public class PrimaryController implements Initializable
     
     public void initInputTypePage()
     {
-        FinancialRecordTypes frt = new FinancialRecordTypes(1, "maint1", 2, "subt1");
+        /*FinancialRecordTypes frt = new FinancialRecordTypes(1, "maint1", 2, "subt1");
         frtList.add(frt);
         frt = new FinancialRecordTypes(1, "maint1", 3, "subt2");
         frtList.add(frt);
         frt = new FinancialRecordTypes(2, "maint2", 4, "subt4");
         frtList.add(frt);
         frt = new FinancialRecordTypes(2, "maint2", 5, "subt5");
-        frtList.add(frt);
-        
+        frtList.add(frt);*/
+        frtList = queryTypeList();
         
         treeTableTypeId.setCellValueFactory(new TreeItemPropertyValueFactory<>("mainId"));
         treeTableTypeColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("mainDesc"));
