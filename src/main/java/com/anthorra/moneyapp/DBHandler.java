@@ -1,4 +1,4 @@
-
+    
 package com.anthorra.moneyapp;
 
 import java.sql.*;
@@ -94,7 +94,7 @@ public class DBHandler
     public static ArrayList<FinancialRecordTypes> queryTypeList()
     {
         ArrayList<FinancialRecordTypes> typeList = new ArrayList<>();
-        
+        /*ITT MAJD FIGYELNI KELL HOGY SORRENDBEN LEGYENEK A KATEGORIAK!!!!*/
         
         return null;
     }

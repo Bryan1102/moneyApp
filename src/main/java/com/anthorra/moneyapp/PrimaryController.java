@@ -37,7 +37,7 @@ public class PrimaryController implements Initializable
     
         /* Tables */
     @FXML TreeTableView<FinancialRecordTypes> treeTableTypes;
-    @FXML TreeTableColumn<FinancialRecordTypes, String> treeTableTypeColumn, treeTableSubTypeColumn;
+    @FXML TreeTableColumn<FinancialRecordTypes, String> treeTableTypeColumn, treeTableSubTypeColumn, treeTableTypeId, treeTableTypeSubTypeId;
     
     /* FINANCIAL RECORD PAGE */
         /* Controls */
@@ -51,7 +51,7 @@ public class PrimaryController implements Initializable
     
         /* Others */
     StatusMessage sm;
-    ObservableList<FinancialRecordTypes> typeList;
+    ArrayList<FinancialRecordTypes> frtList = new ArrayList<>();
     
     /* INITIALIZE */
     @Override
@@ -83,30 +83,41 @@ public class PrimaryController implements Initializable
     
     public void initInputTypePage()
     {
-        /*
-        typeList = FXCollections.observableArrayList();
-        
         FinancialRecordTypes frt = new FinancialRecordTypes(1, "maint1", 2, "subt1");
-        typeList.add(frt);
+        frtList.add(frt);
         frt = new FinancialRecordTypes(1, "maint1", 3, "subt2");
-        typeList.add(frt);
+        frtList.add(frt);
         frt = new FinancialRecordTypes(2, "maint2", 4, "subt4");
-        typeList.add(frt);
+        frtList.add(frt);
         frt = new FinancialRecordTypes(2, "maint2", 5, "subt5");
-        typeList.add(frt);
+        frtList.add(frt);
         
-        TreeItem t1 = new TreeItem(frt);
         
-        treeTableTypes = new TreeTableView<FinancialRecordTypes>();
-        treeTableTypeColumn = new TreeTableColumn<>("FŐkat");
-        treeTableSubTypeColumn = new TreeTableColumn<>("Subcat");
-        
+        treeTableTypeId.setCellValueFactory(new TreeItemPropertyValueFactory<>("mainId"));
         treeTableTypeColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("mainDesc"));
+        treeTableTypeSubTypeId.setCellValueFactory(new TreeItemPropertyValueFactory<>("subId"));
         treeTableSubTypeColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("subDesc"));
         
-        //obs list not compatible with tree item... to be continued
-        //treeTableTypes.setRoot(typeList);
-        */
+                
+        TreeItem top = new TreeItem(new FinancialRecordTypes(0,"Kategóriák",0,""));
+        
+        TreeItem ti, ti2;
+        for(int i = 0; i < frtList.size(); i++)
+        {
+            if(i==0 || frtList.get(i).getMainId()!=frtList.get(i-1).getMainId())
+            {
+                ti2 = new TreeItem(new FinancialRecordTypes(frtList.get(i).getMainId(),frtList.get(i).getMainDesc(),0,""));
+                top.getChildren().add(ti2);
+                
+                for(int j = i; j < frtList.size() && frtList.get(i).getMainId()==frtList.get(j).getMainId(); j++)
+                {
+                    ti = new TreeItem(frtList.get(j));
+                    ti2.getChildren().add(ti);
+                }
+            }
+        }
+        
+        treeTableTypes.setRoot(top);
     }
     
     
@@ -134,5 +145,6 @@ public class PrimaryController implements Initializable
     @FXML public void submitTypeRecord()
     {
         DBHandler.insertTypeIntoDB(inpType.getText(), sm);
+        /*HOZZÁADNI A LISTÁHOZ IS ÉS SORBA RENDEZNI*/
     }
 }

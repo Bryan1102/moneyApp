@@ -22,19 +22,10 @@ public class FinancialRecordTypes
         this.subDesc = subDesc;
     }
 
-    public String getMainDesc()
-    {
-        return mainDesc;
-    }
-
-    public String getSubDesc()
-    {
-        return subDesc;
-    }
-    
-    
-
-    
+    public String getMainDesc()    {        return mainDesc;    }
+    public String getSubDesc()    {        return subDesc;    }
+    public int getMainId()    {        return mainId;    }
+    public int getSubId()    {        return subId;    }
     
     
     
