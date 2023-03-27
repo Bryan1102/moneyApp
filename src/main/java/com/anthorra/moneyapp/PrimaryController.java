@@ -243,7 +243,6 @@ public class PrimaryController implements Initializable
         
         double amount = Integer.parseInt(inpAmount.getText());
         boolean isExpense = rbtnExpense.isSelected();
-        //FinancialRecord fr = new FinancialRecord(amount, isExpense, cbType.getSelectionModel().getSelectedIndex(), cbSubType.getSelectionModel().getSelectedIndex(),inpComment.getText(),datum);
         DBHandler.insertIntoDB(new FinancialRecord(amount, isExpense, typeId, subTypeId,inpComment.getText(),datum), sm);
         clearInputPage();
     }
