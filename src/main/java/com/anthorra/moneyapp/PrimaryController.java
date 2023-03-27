@@ -92,6 +92,7 @@ public class PrimaryController implements Initializable
             if(i==0 || frtList.get(i).getMainId()!=frtList.get(i-1).getMainId())
             {
                 cbType.getItems().add(frtList.get(i).getMainDesc());
+                //cbType.getItems().add(frtList.get(i).getMainId(), frtList.get(i).getMainDesc());
             }
         }
     }
@@ -105,6 +106,7 @@ public class PrimaryController implements Initializable
             if(frtList.get(i).getMainDesc().equals(cbType.getValue()))
             {
                 cbSubType.getItems().add(frtList.get(i).getSubDesc());
+                //cbSubType.getItems().add(frtList.get(i).getSubId(), frtList.get(i).getSubDesc());
             }
         }
     }
@@ -191,7 +193,7 @@ public class PrimaryController implements Initializable
             case 1:
                 for(int i = 0; i < frtList.size(); i++)
                 {
-                    if(frtList.get(i).getMainDesc().equals(cbType.getValue()))
+                    if(desc.equals(frtList.get(i).getMainDesc()))
                     {
                         ret_val = frtList.get(i).getMainId();
                     }
@@ -200,7 +202,8 @@ public class PrimaryController implements Initializable
             case 2:
                 for(int i = 0; i < frtList.size(); i++)
                 {
-                    if(frtList.get(i).getSubDesc().equals(cbSubType.getValue()))
+                    //if(frtList.get(i).getSubDesc().equals(desc))
+                    if(desc.equals(frtList.get(i).getSubDesc()))
                     {
                         ret_val = frtList.get(i).getSubId();
                     }
