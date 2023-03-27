@@ -50,7 +50,7 @@
                               <Label text="Összeg" />
                               <TextField fx:id="inpAmount" maxWidth="200.0" prefWidth="100.0" />
                               <Label text="Label" />
-                              <ComboBox fx:id="cbType" prefWidth="150.0" />
+                              <ComboBox fx:id="cbType" onAction="#refreshInputPageSubType" prefWidth="150.0" />
                               <Label text="Label" />
                               <ComboBox fx:id="cbSubType" prefWidth="150.0" />
                               <Label text="Label" />
@@ -81,10 +81,10 @@
                                  <children>
                                     <TreeTableView fx:id="treeTableTypes" prefHeight="411.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
-                                          <TreeTableColumn fx:id="treeTableTypeId" maxWidth="150.0" minWidth="20.0" prefWidth="120.0" text="Kat. Azon." />
-                                        <TreeTableColumn fx:id="treeTableTypeColumn" maxWidth="150.0" minWidth="20.0" prefWidth="120.0" text="Kategória" />
-                                          <TreeTableColumn fx:id="treeTableTypeSubTypeId" maxWidth="150.0" minWidth="20.0" prefWidth="120.0" text="Alkat. Azon." />
-                                        <TreeTableColumn fx:id="treeTableSubTypeColumn" maxWidth="150.0" minWidth="20.0" prefWidth="120.0" text="Alkategória" />
+                                          <TreeTableColumn fx:id="treeTableTypeId" maxWidth="150.0" minWidth="20.0" prefWidth="100.0" text="Kat. Azon." />
+                                        <TreeTableColumn fx:id="treeTableTypeColumn" maxWidth="150.0" minWidth="20.0" prefWidth="140.0" text="Kategória" />
+                                          <TreeTableColumn fx:id="treeTableTypeSubTypeId" maxWidth="150.0" minWidth="20.0" prefWidth="100.0" text="Alkat. Azon." />
+                                        <TreeTableColumn fx:id="treeTableSubTypeColumn" maxWidth="150.0" minWidth="20.0" prefWidth="140.0" text="Alkategória" />
                                       </columns>
                                     </TreeTableView>
                                  </children>
